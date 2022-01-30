@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MovementPlayer : MonoBehaviour
 {
@@ -77,11 +76,6 @@ public class MovementPlayer : MonoBehaviour
         {
             jumping = false;
             animator.SetBool("Idle", true);
-        }
-
-        if (Input.GetKey("escape"))
-        {
-            SceneManager.LoadScene("StartMenu");
         }
 
         // flips player
