@@ -104,6 +104,11 @@ public class MovementPlayer : MonoBehaviour
             //audioSource.PlayOneShot(clip, volume);
         }
 
+        if (collision.gameObject.CompareTag("floorDead"))
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 
 

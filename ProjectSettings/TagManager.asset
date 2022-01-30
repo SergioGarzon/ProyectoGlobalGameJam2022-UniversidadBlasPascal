@@ -6,6 +6,7 @@ TagManager:
   tags:
   - objectCollect
   - enemy
+  - floorDead
   layers:
   - Default
   - TransparentFX
