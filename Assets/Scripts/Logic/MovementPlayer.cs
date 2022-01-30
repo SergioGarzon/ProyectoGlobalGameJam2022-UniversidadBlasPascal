@@ -10,7 +10,7 @@ public class MovementPlayer : MonoBehaviour
     public float jumpForce = 10f;
 
     public float jumpCheck = .2f;
-
+    // is ground check
     public float checkRadius = 0.3f;
 
     public bool isGrounded;
@@ -22,7 +22,8 @@ public class MovementPlayer : MonoBehaviour
     private float moveInput;
 
     private Rigidbody2D rb;
- 
+
+    //// audio    
     //public AudioSource audioSource;
     //public AudioClip clip;
     //public float volume = 0.2f;
@@ -40,38 +41,50 @@ public class MovementPlayer : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(feetPos.position, checkRadius, whatIsGround);
 
-        if (Input.GetButtonDown("Jump") /*&& isGrounded == true*/)
+        if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             jumping = true;
             jumpCheckCounter = jumpCheck;
             rb.velocity = Vector2.up * jumpForce;
+
+            
+
         }
 
-        if (Input.GetButton("Jump"))/*&& jumping == true)*/
+        if (Input.GetButton("Jump") && jumping == true)
         {
             // can jump only once
             if (jumpCheckCounter > 0)
             {
                 rb.velocity = Vector2.up * jumpForce;
                 jumpCheckCounter -= Time.deltaTime;
+
             }
+
+            animator.SetBool("Jump", true);
 
         }
         else
         {
             jumping = false;
+            
         }
+
+        if(isGrounded && !jumping)
+            animator.SetBool("Jump", false);
 
         if (Input.GetButtonUp("Jump"))
         {
             jumping = false;
+            animator.SetBool("Idle", true);
         }
 
         if (Input.GetKey("escape"))
         {
-            Application.Quit();
+            SceneManager.LoadScene("StartMenu");
         }
 
+        // flips player
         if (moveInput > 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
@@ -80,27 +93,24 @@ public class MovementPlayer : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         if (collision.gameObject.CompareTag("objectCollect"))
         {
             Destroy(collision.gameObject);
             //audioSource.PlayOneShot(clip, volume);
         }
+
     }
+
+
 
     void FixedUpdate()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
-
-        //if (animator.GetInteger("AnimValue") == 2)
-        //{
-        //    ;
-        //}
-
 
         if (moveInput != 0)
         {
@@ -108,7 +118,11 @@ public class MovementPlayer : MonoBehaviour
         }
         else
         {
-            animator.SetBool("Walk", false);
+            if(!jumping)
+            {
+                animator.SetBool("Walk", false);                
+            }
+            
         }
 
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);

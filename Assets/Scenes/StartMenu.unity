@@ -1591,7 +1591,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38250002, y: 0.082}
   m_AnchorMax: {x: 0.62125003, y: 0.17970641}
-  m_AnchoredPosition: {x: 0, y: -0.0000073314}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0.000019073}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1096756170
@@ -2235,7 +2235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.14750001, y: 0.6627156}
   m_AnchorMax: {x: 0.84625006, y: 0.887}
-  m_AnchoredPosition: {x: 2, y: 0.000027657}
+  m_AnchoredPosition: {x: 2, y: 0.000030517578}
   m_SizeDelta: {x: -2, y: -0.000015259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1413598465
@@ -2271,7 +2271,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: City and Police
+  m_Text: PONERLE NOMBRE
 --- !u!222 &1413598466
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2337,7 +2337,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38250002, y: 0.34428442}
   m_AnchorMax: {x: 0.62125003, y: 0.44271562}
-  m_AnchoredPosition: {x: 0, y: 0.0000095367}
+  m_AnchoredPosition: {x: 0, y: 0.0000076293945}
   m_SizeDelta: {x: 0, y: -0.0000038147}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704491930
