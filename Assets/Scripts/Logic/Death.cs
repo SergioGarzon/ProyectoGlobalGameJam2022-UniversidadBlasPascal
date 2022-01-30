@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Death : MonoBehaviour
 {
+    private int contador = 3;
+
+
     // collides with object tagged death
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +20,11 @@ public class Death : MonoBehaviour
     // kills player and resets
     void Die()
     {
+        if(contador == 0)
+
+
         Destroy(transform.parent.gameObject);
+        contador--;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
