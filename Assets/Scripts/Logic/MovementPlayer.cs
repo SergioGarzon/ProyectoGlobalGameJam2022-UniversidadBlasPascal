@@ -22,6 +22,8 @@ public class MovementPlayer : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private int contadorRings = 0;
+
     //// audio    
     //public AudioSource audioSource;
     //public AudioClip clip;
@@ -94,6 +96,9 @@ public class MovementPlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("objectCollect"))
         {
+            contadorRings++;
+            PlayerPrefs.SetInt("contadorRings", contadorRings);
+
             Destroy(collision.gameObject);
             //audioSource.PlayOneShot(clip, volume);
         }

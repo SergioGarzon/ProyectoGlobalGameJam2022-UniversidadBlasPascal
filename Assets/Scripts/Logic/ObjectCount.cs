@@ -5,22 +5,13 @@ using UnityEngine.UI;
 
 public class ObjectCount : MonoBehaviour
 {
-    public static ObjectCount instance;
     public Text text;
-    public int score = 0;
 
-    void Start()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
 
-    public void changeScore(int value)
+    void Update()
     {
-        score += value;
-        text.text = score.ToString();
+        int contador = PlayerPrefs.GetInt("contadorRings", 0);
+        text.text = contador + "";
     }
 
 }
