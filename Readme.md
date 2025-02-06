@@ -1,6 +1,6 @@
 <img src="/ImagesGitHubReadme/who_is_dead_now.png" />
 
-## Project development for Global Game Jam 2022
+## Video game development for Global Game Jam 2022
 
 #### Start Menu:
 
